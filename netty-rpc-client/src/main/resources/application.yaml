@@ -1,0 +1,35 @@
+server:
+    port: 8091
+    tomcat:
+        uri-encoding: UTF-8
+    servlet:
+        encoding:
+            enabled: true
+            force: true
+            charset: UTF-8
+spring:
+    application:
+        name: netty-rpc-client
+    main:
+        banner-mode: console
+        allow-bean-definition-overriding: true
+
+
+
+# 自定义属性
+rpc:
+    netty-client:
+        # 客户端连接服务器的ip或hostname
+        address: 192.168.43.203
+        # 客户端连接服务器的端口号
+        port: 20822
+        # Netty client EventLoop线程池关闭的超时时间（大于Constants.EVENTLOOP_SHUTDOWN_QUIET_PERIOD）,单位：ms
+        timeout: 3000
+        # Netty client连接服务器的超时时间，单位：ms
+        connection-timeout: 5000
+    # RPC消息协议payload的最大长度，默认1M（即: 1048576）, 需要与服务端保持一致
+    payload: 1048576
+    # 客户端RPC请求超时时间（单位ms）
+    timeout: 3000
+    # 序列化器，默认值：protostuff
+    serializer: protostuff

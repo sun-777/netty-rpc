@@ -1,0 +1,17 @@
+package com.sun.server.service.impl;
+
+import com.sun.common.annotation.RpcService;
+import com.sun.common.service.HeartbeatService;
+
+/**
+ * @description:
+ * @author: Sun Xiaodong
+ */
+
+@RpcService
+public class HeartbeatServiceImpl implements HeartbeatService {
+    @Override
+    public String ping() {
+        return "pong";
+    }
+}

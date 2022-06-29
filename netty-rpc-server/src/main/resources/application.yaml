@@ -1,0 +1,31 @@
+server:
+    port: 8089
+    tomcat:
+        uri-encoding: UTF-8
+    servlet:
+        encoding:
+            enabled: true
+            force: true
+            charset: UTF-8
+spring:
+    application:
+        name: netty-rpc-server
+    main:
+        banner-mode: console
+        allow-bean-definition-overriding: true
+
+
+
+# 自定义属性
+rpc:
+    # Netty服务器监听端口
+    netty-server:
+        port: 20822
+        # Netty server worker event loop io threads
+        io-threads: 4
+        # Netty server event loop shutdown timeout, unit: milliseconds
+        event-loop-timeout: 3000
+    # RPC消息协议payload的最大长度，默认1M（即: 1048576），需要与客户端保持一致
+    payload: 1048576
+    # 服务端RPC响应请求超时时间（单位ms）
+    timeout: 3000
